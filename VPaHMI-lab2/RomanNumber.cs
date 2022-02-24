@@ -39,6 +39,7 @@ namespace VPaHMI_lab2
         public static RomanNumber Div(RomanNumber? n1, RomanNumber? n2)
         {
             if (n1 == null || n2 == null) throw new RomanNumberException("ERROR: One or more numbers are null");
+            if (n1._number / n2._number <= 0) throw new RomanNumberException("ERROR: Result less than or equal to 0");
             return new RomanNumber((ushort)(n1._number / n2._number));
         }
 
